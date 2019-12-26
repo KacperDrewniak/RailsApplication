@@ -4,6 +4,9 @@
 
 <!-- Helper z linkiem -->
 
+
+
+
 <table class="table table-dark">
     <thead>
         <tr>
@@ -22,7 +25,10 @@
             <td><%= post.title %></td>
             <td><%= post.author %></td>
             <td><%= post.published ? "tak" : "nie" %></td>
-            <td><%= post.body %></td>
+            <td><%= post.body%></td>
+            <td>
+                <%= link_to "Pokaż", post_path(post), class: "btn btn-default btn-xs" %>
+            </td>
 
         </tr>
         <% end %>
