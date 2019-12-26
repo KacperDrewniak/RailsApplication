@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
 
   def show
@@ -25,7 +26,10 @@ class PostsController < ApplicationController
   end
 
   def update
-    
+    @post = Post.find(params[:id])
+    @post.update_attributes(post_params)
+    flash[:notice] = "Post zaktualizowany pomyślnie"
+    redirect_to posts_path
   end
 
   def destroy
