@@ -26,6 +26,12 @@
   </div>
 
   <%= yield %>
+
+
+  <% if user_signed_in? %>
+
+  <p><%= link_to "wyloguj się", destroy_user_session_path, method: :delete %> </p>
+  <% end %>
 </body>
 
 </html>
